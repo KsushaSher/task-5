@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.4"
+  },
+  "lint-staged": {
+    "client/**/*.{ts,tsx}": [
+      "npm --prefix frontend run lint"
+    ],
+    "server/**/*.{ts}": [
+      "npm --prefix backend run lint"
+    ]
+  },
+  "scripts": {
+    "build": "npm --prefix frontend run build && npm --prefix backend run build",
+    "start": "cd backend && npm run start",
+    "lint": "npm --prefix frontend run lint && npm --prefix backend run lint",
+    "lint:fix": "npm --prefix frontend run lint:fix && npm --prefix backend run lint:fix",
+    "format": "npm --prefix frontend run format && npm --prefix backend run format"
+  }
+}
